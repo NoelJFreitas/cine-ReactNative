@@ -9,7 +9,7 @@ export const palette = {
   gray1: '#46515B',
   gray2: '#8E8E8E',
   gray3: '#B3B3B3',
-  gray4: '#E1E1E1',
+  gray4: '#D1D1D1',
   gray5: '#F5F4FB',
   grayWhite: '#FFFFFF',
 };

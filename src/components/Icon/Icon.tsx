@@ -7,6 +7,8 @@ import {ThemeColors} from '@theme';
 import {BookmarkIcon} from '../../assets/icons/BookmarkIcon';
 import {HomeIcon} from '../../assets/icons/HomeIcon';
 import {MagnifierIcon} from '../../assets/icons/MagnifierIcon';
+import {NewsIcon} from '../../assets/icons/NewsIcon';
+import {ProfileIcon} from '../../assets/icons/ProfileIcon';
 
 export interface Icon {
   size: number;
@@ -15,11 +17,13 @@ export interface Icon {
 
 const iconRegister = {
   home: HomeIcon,
-  Bookmark: BookmarkIcon,
+  bookmark: BookmarkIcon,
   magnifier: MagnifierIcon,
+  news: NewsIcon,
+  profile: ProfileIcon,
 };
 
-type IconNames = keyof typeof iconRegister;
+export type IconNames = keyof typeof iconRegister;
 
 interface IconProps {
   name: IconNames;
