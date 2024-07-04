@@ -1,5 +1,8 @@
-export * from './HomeScreen/HomeScreen';
-export * from './BookmarkScreen/BookmarkScreen';
-export * from './NewsScreen/NewsScreen';
-export * from './ProfileScreen/ProfileScreen';
-export * from './SearchScreen/SearchScreen';
+export * from './app/HomeScreen/HomeScreen';
+export * from './app/BookmarkScreen/BookmarkScreen';
+export * from './app/NewsScreen/NewsScreen';
+export * from './app/ProfileScreen/ProfileScreen';
+export * from './app/SearchScreen/SearchScreen';
+
+export * from './auth/SignUpScreen/SignUpScreen';
+export * from './auth/OnboardingScreen/OnboardingScreen';

@@ -4,7 +4,8 @@ import {createTheme} from '@shopify/restyle';
 
 export const palette = {
   red: '#f34848',
-  lightGray: '#CECECF',
+  lightGray: '#F5f5f5',
+  mediumGray: '#CECECF',
   darkGray: '#181818',
   white: '#FFFFFF',
   back: '#000000',
@@ -37,8 +38,11 @@ export const theme = createTheme({
     s56: 56,
   },
   borderRadii: {
+    s5: 5,
     s8: 8,
+    s10: 10,
     s12: 12,
+    s14: 14,
     s16: 16,
   },
   textVariants: {

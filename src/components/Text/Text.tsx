@@ -12,6 +12,8 @@ export interface TextProps extends SRTExtProps {
   preset?: TextVariants;
   semiBold?: boolean;
   medium?: boolean;
+  bold?: boolean;
+  black?: boolean;
 }
 
 export function Text({
@@ -20,9 +22,11 @@ export function Text({
   style,
   semiBold,
   medium,
+  bold,
+  black,
   ...sRTExtProps
 }: TextProps) {
-  const fontFamily = getFontFamily(preset, semiBold, medium);
+  const fontFamily = getFontFamily(preset, semiBold, medium, bold, black);
 
   return (
     <SRText
@@ -38,16 +42,22 @@ function getFontFamily(
   preset: TextVariants,
   semiBold?: boolean,
   medium?: boolean,
+  bold?: boolean,
+  black?: boolean,
 ) {
   if (
     preset === 'headingLarge' ||
     preset === 'headingMedium' ||
     preset === 'headingSmall'
   ) {
-    $fontFamily.semibold;
+    $fontFamily.bold;
   }
 
   switch (true) {
+    case bold:
+      return $fontFamily.bold;
+    case black:
+      return $fontFamily.black;
     case semiBold:
       return $fontFamily.semibold;
     case medium:
@@ -82,4 +92,6 @@ export const $fontFamily = {
   medium: 'SFProDisplay-Medium',
   semibold: 'Montserrat-Semibold',
   regular: 'SFProDisplay-Regular',
+  bold: 'SFProDisplay-Bold',
+  black: 'SFProDisplay-Black',
 };

@@ -54,6 +54,8 @@
 		<string>SFProDisplay-Medium.ttf</string>
 		<string>SFProDisplay-Regular.ttf</string>
 		<string>SFProDisplay-Semibold.ttf</string>
+		<string>SFProDisplay-Bold.ttf</string>
+		<string>SFProDisplay-Black.ttf</string>
 	</array>
 </dict>
 </plist>

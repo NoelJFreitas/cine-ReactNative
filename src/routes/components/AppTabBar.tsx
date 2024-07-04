@@ -64,11 +64,11 @@ export function AppTabBar({state, descriptors, navigation}: BottomTabBarProps) {
             onLongPress={onLongPress}
             style={$Flex}>
             <Icon
-              color={isFocused ? 'primary' : 'lightGray'}
+              color={isFocused ? 'primary' : 'mediumGray'}
               name={tabItem.icon}
               size={23}
             />
-            <Text {...$label} color={isFocused ? 'primary' : 'lightGray'}>
+            <Text {...$label} color={isFocused ? 'primary' : 'mediumGray'}>
               {tabItem.label}
             </Text>
           </TouchableOpacityBox>

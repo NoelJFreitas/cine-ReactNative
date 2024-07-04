@@ -4,7 +4,7 @@ import {Screen, Text} from '@components';
 
 export function HomeScreen() {
   return (
-    <Screen>
+    <Screen backgroundColor="red">
       <Text>HomeScreen</Text>
     </Screen>
   );
