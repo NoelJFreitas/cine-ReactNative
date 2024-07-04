@@ -4,8 +4,9 @@ import {createTheme} from '@shopify/restyle';
 
 export const palette = {
   red: '#f34848',
-  lightGray: '#F5f5f5',
-  mediumGray: '#CECECF',
+  extraLightGray: '#F5f5f5',
+  lightGray: '#E7E7E7',
+  mediumGray: '#A6A6A6',
   darkGray: '#181818',
   white: '#FFFFFF',
   back: '#000000',
@@ -20,7 +21,7 @@ export const theme = createTheme({
     background: palette.white,
     backgroundContrast: palette.darkGray,
 
-    iconColor: palette.lightGray,
+    iconColor: palette.mediumGray,
   },
   spacing: {
     s4: 4,

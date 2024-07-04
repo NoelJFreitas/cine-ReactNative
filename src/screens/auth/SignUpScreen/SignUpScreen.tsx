@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, ImageStyle} from 'react-native';
 
-import {Box, Screen, Text} from '@components';
+import {Box, FoneInput, Screen, Text} from '@components';
 
 export function SignUpScreen() {
   return (
@@ -29,9 +29,8 @@ export function SignUpScreen() {
           bold>
           Acessar
         </Text>
-        <Text>
-          <Text bold>Número de contato</Text>
-        </Text>
+        <Text bold>Número de contato</Text>
+        <FoneInput />
       </Box>
     </Screen>
   );
