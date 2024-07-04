@@ -3,25 +3,23 @@ import {ViewStyle} from 'react-native';
 import {createTheme} from '@shopify/restyle';
 
 export const palette = {
-  bluePrimary: '#514EB6',
-
-  grayBlack: '#000000',
-  gray1: '#46515B',
-  gray2: '#8E8E8E',
-  gray3: '#B3B3B3',
-  gray4: '#D1D1D1',
-  gray5: '#F5F4FB',
-  grayWhite: '#FFFFFF',
+  red: '#f34848',
+  lightGray: '#CECECF',
+  darkGray: '#181818',
+  white: '#FFFFFF',
+  back: '#000000',
 };
 
 export const theme = createTheme({
   colors: {
     ...palette,
-    primary: palette.bluePrimary,
-    primaryContrast: palette.gray5,
+    primary: palette.red,
+    primaryContrast: palette.white,
 
-    background: palette.grayWhite,
-    backgroundContrast: palette.grayBlack,
+    background: palette.white,
+    backgroundContrast: palette.darkGray,
+
+    iconColor: palette.lightGray,
   },
   spacing: {
     s4: 4,
