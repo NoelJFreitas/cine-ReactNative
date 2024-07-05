@@ -2,4 +2,4 @@ export * from './Box/Box';
 export * from './Text/Text';
 export * from './Screen/Screen';
 export * from './Icon/Icon';
-export * from './FoneInput/FoneInput';
+export * from './FoneNumberInput/FoneNumberInput';

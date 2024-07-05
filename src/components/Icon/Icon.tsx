@@ -5,6 +5,7 @@ import {useAppTheme} from '@hooks';
 import {ThemeColors} from '@theme';
 
 import {BookmarkIcon} from '../../assets/icons/BookmarkIcon';
+import {CloseIcon} from '../../assets/icons/CloseIcon';
 import {DownArrowIcon} from '../../assets/icons/DownArrowIcon';
 import {HomeIcon} from '../../assets/icons/HomeIcon';
 import {MagnifierIcon} from '../../assets/icons/MagnifierIcon';
@@ -23,6 +24,7 @@ const iconRegister = {
   news: NewsIcon,
   profile: ProfileIcon,
   downArrow: DownArrowIcon,
+  close: CloseIcon,
 };
 
 export type IconNames = keyof typeof iconRegister;
