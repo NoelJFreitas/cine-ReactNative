@@ -1,9 +1,35 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {Image, ImageStyle} from 'react-native';
 
-import {Box, FoneInput, Screen, Text} from '@components';
+import {IsoCountry} from '@domain';
+
+import {
+  BottomSheet,
+  Box,
+  CountryCallingCodeSelector,
+  FoneNumberInput,
+  Screen,
+  Text,
+} from '@components';
 
 export function SignUpScreen() {
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [isoCountry, setIsoCountry] = useState<IsoCountry>('BR');
+  const bottomSheetRef = useRef<BottomSheet>(null);
+
+  function onChangeText(value: string) {
+    setPhoneNumber(value);
+  }
+
+  function handleSetIsoCountry(iso: IsoCountry) {
+    setIsoCountry(iso);
+    bottomSheetRef.current?.closeBottomSheet();
+  }
+
+  function openBottomSheet() {
+    bottomSheetRef.current?.openBottomSheet();
+  }
+
   return (
     <Screen
       backgroundColor="backgroundContrast"
@@ -30,8 +56,17 @@ export function SignUpScreen() {
           Acessar
         </Text>
         <Text bold>Número de contato</Text>
-        <FoneInput />
+        <FoneNumberInput
+          countryCode={isoCountry}
+          value={phoneNumber}
+          onChangeText={onChangeText}
+          onPress={openBottomSheet}
+        />
       </Box>
+
+      <BottomSheet ref={bottomSheetRef} modalTitle="Selecione o pais desejado">
+        <CountryCallingCodeSelector onSelect={handleSetIsoCountry} />
+      </BottomSheet>
     </Screen>
   );
 }

@@ -29,7 +29,7 @@ interface Props {
 export const BottomSheet = forwardRef<BottomSheet, Props>(
   ({children, onCloseBottomSheet, modalTitle}, ref) => {
     const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-    const snapPoints = useMemo(() => ['25%', '40%', '60%', '80%'], []);
+    const snapPoints = useMemo(() => ['25%', '40%', '60%', '90%'], []);
 
     useImperativeHandle(ref, () => ({
       openBottomSheet,
@@ -66,12 +66,10 @@ export const BottomSheet = forwardRef<BottomSheet, Props>(
           onChange={handleSheetChanges}
           enableOverDrag={false}>
           <BottomSheetView style={$contentContainer}>
-            {modalTitle && (
-              <BottomSheetHeader
-                title={modalTitle}
-                onPressClose={closeBottomSheet}
-              />
-            )}
+            <BottomSheetHeader
+              title={modalTitle}
+              onPressClose={closeBottomSheet}
+            />
             {children}
           </BottomSheetView>
         </BottomSheetModal>

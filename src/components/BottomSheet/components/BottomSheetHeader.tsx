@@ -17,7 +17,7 @@ export function BottomSheetHeader({
         {title}
       </Text>
       <Box position="absolute" right={20}>
-        <Icon name="close" color="primary" onPress={onPressClose} />
+        <Icon name="close" color="iconColor" onPress={onPressClose} />
       </Box>
     </Box>
   );

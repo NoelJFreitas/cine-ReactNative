@@ -2,4 +2,8 @@ export * from './Box/Box';
 export * from './Text/Text';
 export * from './Screen/Screen';
 export * from './Icon/Icon';
+export * from './ActivityIndicator/ActivityIndicator';
+export * from './FlatList/FlatList';
 export * from './FoneNumberInput/FoneNumberInput';
+export * from './FoneNumberInput/CountryCallingCodeSelector';
+export * from './BottomSheet/BottomSheet';

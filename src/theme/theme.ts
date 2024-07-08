@@ -22,6 +22,10 @@ export const theme = createTheme({
     backgroundContrast: palette.darkGray,
 
     iconColor: palette.mediumGray,
+    buttonColor: palette.red,
+    borderColor: palette.lightGray,
+
+    error: palette.red,
   },
   spacing: {
     s4: 4,
