@@ -4,9 +4,11 @@ import {Pressable} from 'react-native';
 import {useAppTheme} from '@hooks';
 import {ThemeColors} from '@theme';
 
+import {AppleIcon} from '../../assets/icons/AppleIcon';
 import {BookmarkIcon} from '../../assets/icons/BookmarkIcon';
 import {CloseIcon} from '../../assets/icons/CloseIcon';
 import {DownArrowIcon} from '../../assets/icons/DownArrowIcon';
+import {GoogleIcon} from '../../assets/icons/GoogleIcon';
 import {HomeIcon} from '../../assets/icons/HomeIcon';
 import {MagnifierIcon} from '../../assets/icons/MagnifierIcon';
 import {NewsIcon} from '../../assets/icons/NewsIcon';
@@ -25,6 +27,8 @@ const iconRegister = {
   profile: ProfileIcon,
   downArrow: DownArrowIcon,
   close: CloseIcon,
+  google: GoogleIcon,
+  apple: AppleIcon,
 };
 
 export type IconNames = keyof typeof iconRegister;

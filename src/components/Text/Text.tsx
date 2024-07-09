@@ -74,7 +74,8 @@ type TextVariants =
   | 'paragraphLarge'
   | 'paragraphMedium'
   | 'paragraphSmall'
-  | 'paragraphCaption'
+  | 'paragraphCaptionLarge'
+  | 'paragraphCaptionMedium'
   | 'paragraphCaptionSmall';
 
 export const $fontSizes: Record<TextVariants, TextStyle> = {
@@ -84,7 +85,8 @@ export const $fontSizes: Record<TextVariants, TextStyle> = {
   paragraphLarge: {fontSize: 18},
   paragraphMedium: {fontSize: 17},
   paragraphSmall: {fontSize: 15},
-  paragraphCaption: {fontSize: 12},
+  paragraphCaptionLarge: {fontSize: 14},
+  paragraphCaptionMedium: {fontSize: 12},
   paragraphCaptionSmall: {fontSize: 10},
 };
 

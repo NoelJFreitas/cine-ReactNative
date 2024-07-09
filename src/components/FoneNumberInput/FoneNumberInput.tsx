@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {TextInput, TextStyle} from 'react-native';
 
 import {IsoCountry} from '@domain';
 import parsePhoneNumber, {getExampleNumber} from 'libphonenumber-js';
 import examples from 'libphonenumber-js/mobile/examples';
 
-import {Box, BoxProps} from '@components';
+import {Box, BoxProps, PressableBox} from '@components';
 import {ThemeColors} from '@theme';
 
 import {FoneCountryFlag} from './components/FoneCountryFlag';
@@ -25,6 +25,7 @@ export function FoneNumberInput({
   ...boxProps
 }: FoneNumberInputProps) {
   const [isValid, setIsValid] = useState<boolean>();
+  const inputRef = useRef<TextInput>(null);
 
   const borderColor: ThemeColors =
     isValid === undefined || isValid ? 'borderColor' : 'error';
@@ -56,6 +57,10 @@ export function FoneNumberInput({
     setIsValid(undefined);
   }, [countryCode, value]);
 
+  function onPressField() {
+    inputRef.current?.focus();
+  }
+
   return (
     <Box
       flexDirection="row"
@@ -68,12 +73,15 @@ export function FoneNumberInput({
       overflow="hidden"
       {...boxProps}>
       <FoneCountryFlag isoCode={countryCode} onPress={onPress} />
-      <TextInput
-        style={$textInput}
-        value={value}
-        onChangeText={handleOnChangeText}
-        placeholder={placeholderExemple}
-      />
+      <PressableBox onPress={onPressField} flex={1}>
+        <TextInput
+          style={$textInput}
+          value={value}
+          onChangeText={handleOnChangeText}
+          placeholder={placeholderExemple}
+          ref={inputRef}
+        />
+      </PressableBox>
     </Box>
   );
 }

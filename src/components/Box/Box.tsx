@@ -16,6 +16,8 @@ import {
   SpacingProps,
   LayoutProps,
   BorderProps,
+  SpacingShorthandProps,
+  spacingShorthand,
 } from '@shopify/restyle';
 
 import {Theme} from '@theme';
@@ -23,26 +25,24 @@ import {Theme} from '@theme';
 export const Box = createBox<Theme>();
 export type BoxProps = React.ComponentProps<typeof Box>;
 
-//mesclando props dos styles do restyle
-export type TouchableOpacityBoxProps = BackgroundColorProps<Theme> &
+type RestyleTypes = BackgroundColorProps<Theme> &
   SpacingProps<Theme> &
   LayoutProps<Theme> &
   BorderProps<Theme> &
-  TouchableOpacityProps;
+  SpacingShorthandProps<Theme>;
 
-export type PressableBoxProps = BackgroundColorProps<Theme> &
-  SpacingProps<Theme> &
-  LayoutProps<Theme> &
-  BorderProps<Theme> &
-  PressableProps;
+export type TouchableOpacityBoxProps = TouchableOpacityProps & RestyleTypes;
 
-//create a custom component
 export const TouchableOpacityBox = createRestyleComponent<
   TouchableOpacityBoxProps,
   Theme
->([backgroundColor, spacing, layout, border], TouchableOpacity);
+>(
+  [backgroundColor, spacing, spacingShorthand, layout, border],
+  TouchableOpacity,
+);
 
+export type PressableBoxProps = PressableProps & RestyleTypes;
 export const PressableBox = createRestyleComponent<PressableBoxProps, Theme>(
-  [backgroundColor, spacing, layout, border],
+  [backgroundColor, spacing, spacingShorthand, layout, border],
   Pressable,
 );

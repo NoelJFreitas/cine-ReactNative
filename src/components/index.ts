@@ -7,3 +7,6 @@ export * from './FlatList/FlatList';
 export * from './FoneNumberInput/FoneNumberInput';
 export * from './FoneNumberInput/CountryCallingCodeSelector';
 export * from './BottomSheet/BottomSheet';
+export * from './Image/Image';
+export * from './Button/Button';
+export * from './Separator/Separator';

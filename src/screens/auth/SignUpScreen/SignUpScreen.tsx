@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {Image, ImageStyle} from 'react-native';
+import {ImageStyle} from 'react-native';
 
 import {IsoCountry} from '@domain';
 
@@ -10,7 +10,12 @@ import {
   FoneNumberInput,
   Screen,
   Text,
+  Image,
+  Button,
+  Separator,
 } from '@components';
+
+import {SocialButton} from './components/SocialButton';
 
 export function SignUpScreen() {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -36,12 +41,9 @@ export function SignUpScreen() {
       noPaddingBottom
       noPaddingHorizontal>
       <Box flex={2} justifyContent="center" alignItems="center">
-        <Image
-          source={require('../../../assets/images/logo.png')}
-          resizeMode="contain"
-          style={$image}
-        />
+        <Image name="logo" style={$image} />
       </Box>
+
       <Box
         flex={8}
         backgroundColor="background"
@@ -50,18 +52,42 @@ export function SignUpScreen() {
         paddingHorizontal="s24">
         <Text
           textAlign="center"
-          paddingVertical="s32"
+          marginVertical="s40"
           preset="headingMedium"
           bold>
           Acessar
         </Text>
-        <Text bold>Número de contato</Text>
+
+        <Text mb="s20" bold>
+          Número de contato
+        </Text>
+
         <FoneNumberInput
+          mb="s15"
           countryCode={isoCountry}
           value={phoneNumber}
           onChangeText={onChangeText}
           onPress={openBottomSheet}
         />
+
+        <Button title="Continuar" marginBottom="s12" />
+        <Text preset="paragraphCaptionLarge" textAlign="center">
+          Digite o seu número de telefone cadastrado.
+        </Text>
+        <Text
+          bold
+          color="back"
+          preset="paragraphCaptionLarge"
+          textAlign="center">
+          Caso nao tenha uma conta, clique aqui!
+        </Text>
+        <Separator title="Ou acesse por" marginVertical="s40" />
+        <SocialButton
+          socialName="google"
+          title="Faça login com Google"
+          mb="s15"
+        />
+        <SocialButton socialName="apple" title="Faça login com Apple" />
       </Box>
 
       <BottomSheet ref={bottomSheetRef} modalTitle="Selecione o pais desejado">
